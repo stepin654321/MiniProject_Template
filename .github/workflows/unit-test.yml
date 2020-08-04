@@ -1,0 +1,19 @@
+name: Unit testing
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Cunit
+      run: sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make test
+      run:  make test -C MiniProject_C/3_Implementation/
