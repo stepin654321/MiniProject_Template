@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Factorial" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/Factorial" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="inc" />
+			<Add directory="unity" />
+			<Add directory="test" />
+		</Compiler>
+		<Unit filename="inc/factorial.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/factorial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test/test_factorial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test/test_factorial.h" />
+		<Unit filename="unity/unity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="unity/unity.h" />
+		<Unit filename="unity/unity_internals.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
