@@ -101,25 +101,25 @@ function SearchBox(name, resultsPath, inFrame, label)
   // ----------- DOM Elements
 
   this.DOMSearchField = function()
-  {  return document.getElementById("MSearchField");  }
+  {  return document.getElementById("MSearchField")  }
 
   this.DOMSearchSelect = function()
-  {  return document.getElementById("MSearchSelect");  }
+  {  return document.getElementById("MSearchSelect") }
 
   this.DOMSearchSelectWindow = function()
-  {  return document.getElementById("MSearchSelectWindow");  }
+  {  return document.getElementById("MSearchSelectWindow")  }
 
   this.DOMPopupSearchResults = function()
-  {  return document.getElementById("MSearchResults");  }
+  {  return document.getElementById("MSearchResults")  }
 
   this.DOMPopupSearchResultsWindow = function()
-  {  return document.getElementById("MSearchResultsWindow");  }
+  {  return document.getElementById("MSearchResultsWindow")  }
 
   this.DOMSearchClose = function()
-  {  return document.getElementById("MSearchClose"); }
+  {  return document.getElementById("MSearchClose") }
 
   this.DOMSearchBox = function()
-  {  return document.getElementById("MSearchBox");  }
+  {  return document.getElementById("MSearchBox")  }
 
   // ------------ Event Handlers
 
@@ -184,9 +184,9 @@ function SearchBox(name, resultsPath, inFrame, label)
     }
 
     var e  = (evt) ? evt : window.event; // for IE
-    if (e.keyCode==40 || e.keyCode==13)
+    if (e.keyCode===40 || e.keyCode===13)
     {
-      if (e.shiftKey==1)
+      if (e.shiftKey===1)
       {
         this.OnSearchSelectShow();
         var win=this.DOMSearchSelectWindow();
@@ -206,7 +206,7 @@ function SearchBox(name, resultsPath, inFrame, label)
         window.frames.MSearchResults.postMessage("take_focus", "*");
       }
     }
-    else if (e.keyCode==27) // Escape out of the search field
+    else if (e.keyCode===27) // Escape out of the search field
     {
       this.DOMSearchField().blur();
       this.DOMPopupSearchResultsWindow().style.display = 'none';
@@ -290,17 +290,17 @@ function SearchBox(name, resultsPath, inFrame, label)
   this.OnSearchSelectKey = function(evt)
   {
     var e = (evt) ? evt : window.event; // for IE
-    if (e.keyCode==40 && this.searchIndex<this.SelectItemCount()) // Down
+    if (e.keyCode===40 && this.searchIndex<this.SelectItemCount()) // Down
     {
       this.searchIndex++;
       this.OnSelectItem(this.searchIndex);
     }
-    else if (e.keyCode==38 && this.searchIndex>0) // Up
+    else if (e.keyCode===38 && this.searchIndex>0) // Up
     {
       this.searchIndex--;
       this.OnSelectItem(this.searchIndex);
     }
-    else if (e.keyCode==13 || e.keyCode==27)
+    else if (e.keyCode===13 || e.keyCode==27)
     {
       this.OnSelectItem(this.searchIndex);
       this.CloseSelectionWindow();
@@ -529,7 +529,7 @@ function SearchResults(name)
         i++;
       }
       document.getElementById("Searching").style.display='none';
-      if (matches == 0) // no results
+      if (matches === 0) // no results
       {
         document.getElementById("NoMatches").style.display='block';
       }
@@ -604,16 +604,16 @@ function SearchResults(name)
         this.lastKey = 0;
         this.repeatOn = false;
       }
-      return this.lastKey!=0;
+      return this.lastKey!==0;
     }
 
     this.Nav = function(evt,itemIndex)
     {
       var e  = (evt) ? evt : window.event; // for IE
-      if (e.keyCode==13) return true;
+      if (e.keyCode===13) return true;
       if (!this.ProcessKeys(e)) return false;
 
-      if (this.lastKey==38) // Up
+      if (this.lastKey===38) // Up
       {
         var newIndex = itemIndex-1;
         var focusItem = this.NavPrev(newIndex);
@@ -648,7 +648,7 @@ function SearchResults(name)
            parent.document.getElementById("MSearchField").focus();
         }
       }
-      else if (this.lastKey==40) // Down
+      else if (this.lastKey===40) // Down
       {
         var newIndex = itemIndex+1;
         var focusItem;
@@ -661,24 +661,24 @@ function SearchResults(name)
         if (!focusItem) focusItem = this.NavNext(newIndex);
         if (focusItem)  focusItem.focus();
       }
-      else if (this.lastKey==39) // Right
+      else if (this.lastKey===39) // Right
       {
         var item = document.getElementById('Item'+itemIndex);
         var elem = this.FindChildElement(item.parentNode.parentNode.id);
         if (elem) elem.style.display = 'block';
       }
-      else if (this.lastKey==37) // Left
+      else if (this.lastKey===37) // Left
       {
         var item = document.getElementById('Item'+itemIndex);
         var elem = this.FindChildElement(item.parentNode.parentNode.id);
         if (elem) elem.style.display = 'none';
       }
-      else if (this.lastKey==27) // Escape
+      else if (this.lastKey===27) // Escape
       {
         parent.searchBox.CloseResultsWindow();
         parent.document.getElementById("MSearchField").focus();
       }
-      else if (this.lastKey==13) // Enter
+      else if (this.lastKey===13) // Enter
       {
         return true;
       }
@@ -688,10 +688,10 @@ function SearchResults(name)
     this.NavChild = function(evt,itemIndex,childIndex)
     {
       var e  = (evt) ? evt : window.event; // for IE
-      if (e.keyCode==13) return true;
+      if (e.keyCode===13) return true;
       if (!this.ProcessKeys(e)) return false;
 
-      if (this.lastKey==38) // Up
+      if (this.lastKey===38) // Up
       {
         if (childIndex>0)
         {
@@ -703,7 +703,7 @@ function SearchResults(name)
           document.getElementById('Item'+itemIndex).focus();
         }
       }
-      else if (this.lastKey==40) // Down
+      else if (this.lastKey===40) // Down
       {
         var newIndex = childIndex+1;
         var elem = document.getElementById('Item'+itemIndex+'_c'+newIndex);
@@ -716,12 +716,12 @@ function SearchResults(name)
           elem.focus();
         }
       }
-      else if (this.lastKey==27) // Escape
+      else if (this.lastKey===27) // Escape
       {
         parent.searchBox.CloseResultsWindow();
         parent.document.getElementById("MSearchField").focus();
       }
-      else if (this.lastKey==13) // Enter
+      else if (this.lastKey===13) // Enter
       {
         return true;
       }
