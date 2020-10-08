@@ -20,7 +20,7 @@ INC	= -Iinc
 PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
 
 # Document files
-DOCUMENTATION_OUTPUT = documentation/html
+#DOCUMENTATION_OUTPUT = documentation/html
 
 # Default target built
 $(PROJECT_NAME):all
@@ -37,7 +37,7 @@ run:$(PROJECT_NAME)
 
 # Document the code using Doxygen
 doc:
-	make -C ./documentation
+	#make -C ./documentation
 
 # Build and run the unit tests
 test:$(BUILD)
@@ -46,7 +46,7 @@ test:$(BUILD)
 
 # Remove all the built files, invoke by `make clean`
 clean:
-	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
+	#rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
 
 # Create new build folder if not present
 $(BUILD):
