@@ -1,5 +1,5 @@
 #ifndef HOTEL_H_INCLUDED
-#define HOTEL_H_INCLUDE
+#define HOTEL_H_INCLUDED
 
 
 #include<stdio.h>
