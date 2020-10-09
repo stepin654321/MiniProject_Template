@@ -138,6 +138,124 @@ int printroom(int choice)
 
 
 
+
+
+
+//login
+void login()
+{
+    FILE *pass;
+    char ipassword[100];
+    int i,count=0,flag1;
+
+
+
+    do
+    {
+        flag1 = 0;
+        do
+        {
+        	flag1 = 0;
+		    printf("\nEnter Name(Without spaces): ");
+
+            //checking if the name has space in between or not
+		    scanf(" %[^\n]s",a.name);
+		    for(i = 0; i<strlen(a.name); i++)
+		    {
+		    	if(a.name[i] == ' ')
+		    	{
+		    		flag1 = 1;
+		    		printf("Invalid Username");
+		    		break;
+
+		    	}
+			}
+		}
+		while (flag1 == 1);
+
+        //Entering the password for a new user or entering the password already set by the registered user
+        pass = fopen("user credentials","r");
+        do
+        {
+            fscanf(pass,"%s : %s",user.name,user.password);
+            if( strcmp(user.name,a.name) == 0 )
+            {
+                printf("\nYou are already an existing user\n\nEnter your password: ");
+
+                //checking if the password has space in between or not
+
+
+
+
+                scanf(" %[^\n]s",ipassword);
+                for(i = 0; i<strlen(ipassword); i++)
+        		{
+		        	if(ipassword[i] == ' ')
+        			{
+        				printf("Invalid password");
+        				flag1 = 2;
+        				break;
+        			}
+				}
+				if (flag1 == 2)
+				{
+					flag1 = -1;
+					break;
+				}
+                if(strcmp(user.password,ipassword) == 0)
+                {
+                    flag1 = 1;
+                }
+                else
+                {
+                    flag1 = -1;
+                    printf("\nInvalid password, You will have to make a new account with a different name\n\n");
+                }
+                break;
+            }
+        }
+        while( !feof(pass) );
+        fclose(pass);
+    }
+    while(flag1 == -1);
+
+    if(flag1 == 0)
+    {
+    	do
+    	{
+    		flag1 = 0;
+		    printf("You are a new user, please enter a password for your account: ");
+
+            //checking if the password has space in between or not
+		    scanf(" %[^\n]s",ipassword);
+		    for(i = 0; i<strlen(ipassword); i++)
+		    {
+				if(ipassword[i] == ' ')
+		    	{
+		    		printf("Invalid password");
+		    		flag1 = 1;
+		    		break;
+		    	}
+			}
+		}
+		while(flag1 == 1);
+        pass = fopen("user credentials","a");
+        fprintf(pass,"%s : %s\n",a.name,ipassword);
+        fclose(pass);
+        flag1 = 1;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 //booking a room
 void book(){
     login();
