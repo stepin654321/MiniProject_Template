@@ -9,8 +9,8 @@
 
 
 int main(){     // MAIN FUNCTION
-	int i=0;
-        char customername;
+	
+
 	char choice;
         printf("welcome to hotel");
 
