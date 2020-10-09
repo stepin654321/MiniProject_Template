@@ -1,7 +1,7 @@
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
 
-#include <covidtracker.h>
+#include <hotel.h>
 #define PROJECT_NAME    "hotel"
 
 void test_menu(void);
