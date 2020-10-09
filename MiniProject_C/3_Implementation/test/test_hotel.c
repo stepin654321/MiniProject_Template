@@ -2,7 +2,7 @@
 #include <CUnit/CUnit.h>
 
 #include <covidtracker.h>
-#define PROJECT_NAME    "covidtracker"
+#define PROJECT_NAME    "hotel"
 
 void test_menu(void);
 
@@ -43,3 +43,4 @@ void test_menu(void) {
   CU_ASSERT(0 == valid_choice(8));
   CU_ASSERT(0 == valid_choice(9));
 }
+
