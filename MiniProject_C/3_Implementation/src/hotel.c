@@ -97,15 +97,13 @@ int getchoice()
     if(choice>6 || choice<1)
     {
         printf("\nChoice you entered is invalid.Enter a valid choice.\n\n");
-        getchoice();
+        return 0;
     }
     else
     {
         return choice;
     }
 }
-
-
 
 
 
@@ -154,7 +152,12 @@ void book(){
         int choice;
         while(1)
         {
+	    choice=getchoice();
+            while(choice==0)
+            {
             choice=getchoice();
+            }
+       
             a.num=printroom(choice);
             if (a.num == -2)
             {
