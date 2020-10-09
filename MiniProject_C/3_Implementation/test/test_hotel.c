@@ -4,7 +4,7 @@
 #include <hotel.h>
 #define PROJECT_NAME    "hotel"
 
-void test_menu(void);
+void test_getchoice(void);
 
 /* Start of the application test */
 int main() {
@@ -18,7 +18,7 @@ int main() {
 
 /* Add your test functions*/
   
-  CU_add_test(suite, "menu", test_menu);
+  CU_add_test(suite, "getchoice", test_getchoice);
   
 
 /* Note: Do not edit START*/
@@ -37,9 +37,9 @@ int main() {
 
 /* Write all the test functions */
 
-void test_menu(void) {
-  CU_ASSERT(1 == valid_choice(2));
-  CU_ASSERT(1 == valid_choice(5));
+void test_getchoice(void) {
+  CU_ASSERT(1 == valid_choice(1));
+  CU_ASSERT(6 == valid_choice(6));
   CU_ASSERT(0 == valid_choice(8));
   CU_ASSERT(0 == valid_choice(9));
 }
