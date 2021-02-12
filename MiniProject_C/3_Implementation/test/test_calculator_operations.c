@@ -37,7 +37,7 @@ void test_add(void) {
   TEST_ASSERT_EQUAL(30, add(10, 20));
   
   /* Dummy fail*/
-  TEST_ASSERT_EQUAL(1500, add(7500, 7500));
+  TEST_ASSERT_EQUAL(15000, add(7500, 7500));
 }
 
 void test_subtract(void) {
