@@ -186,6 +186,7 @@ ProjectFolder
 
 
 * Launch Doxywizard from launch menu
+
 |:--:|:--:|
 |![Doxywizard](images/doxywizard.png)|![Doxywizard](images/doxywizard1.png)|
 
