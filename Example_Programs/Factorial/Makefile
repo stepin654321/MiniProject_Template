@@ -7,7 +7,7 @@ INC = -Iunity\
 -Iinc\
 -Itest
 
-PROJECT_NAME = FACTORIAL.out
+PROJECT_NAME = FACTORIAL.exe
 
 $(PROJECT_NAME): $(SRC)
 	gcc $(SRC) $(INC) -o $(PROJECT_NAME)
@@ -19,3 +19,8 @@ doc:
 
 clean:
 	rm -rf $(PROJECT_NAME) documentation/html
+
+coverage:${PROJECT_NAME}
+	gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC) -o $(PROJECT_NAME)
+	./${PROJECT_NAME}
+	gcov -a src/factorial.c main.c
