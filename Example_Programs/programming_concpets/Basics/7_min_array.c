@@ -10,6 +10,7 @@
  */
 #include "stdio.h"
 #include "time.h"
+#include "stdlib.h"
 
 #define ARRAY_SIZE    (10)
 /* Two methods to access the array values */
@@ -78,7 +79,7 @@ int main() {
   for(unsigned int index = 0; index <ARRAY_SIZE; index++)
   {
     /* Fill data values which are below 1000 */
-    arr2[index] = random()%1000;
+    arr2[index] = rand()%1000;
   }
   printf("Minimum in Array = %d",min_value_in_array(arr2, ARRAY_SIZE));
   
