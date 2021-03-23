@@ -16,9 +16,10 @@
   EmailID = youremailID
   GitHub Link = Your Github link...so on.
 ```
+* Refer to [data.csv](data.csv) file for example.
 
 ### Problem Statement - 2B
-* Store the extracted data in the above step into an **Array of below structures**:
+* Store the extracted data in the above step into an **Array of below structure**:
 ```
 typedef struct info_t {
     char* name;
