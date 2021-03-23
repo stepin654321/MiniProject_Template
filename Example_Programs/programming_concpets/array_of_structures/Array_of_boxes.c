@@ -155,6 +155,6 @@ int main()
     display_all(box_ptr, ARRAY_SIZE);
 
     // release the dynamically allocated memory
-    free(box_ptr);
+    //free(box_ptr);
     box_ptr = NULL;
 }

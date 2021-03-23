@@ -10,13 +10,17 @@ all:$(SRC)
 run: all
 	./$(PROJ_NAME)
 
-analyze: all memcheck staticcheck coverage codesize
+analyze: all memcheck staticcheck coverage codesize sanitize_check
 
 staticcheck:
 	cppcheck --enable=all .
 
 memcheck:
 	valgrind ./$(PROJ_NAME)
+
+sanitize_check:
+	gcc -fsanitize=address -fno-omit-frame-pointer $(SRC) -o $(PROJ_NAME)
+	./$(PROJ_NAME)
 
 coverage:$(SRC)
 	gcc -fprofile-arcs -ftest-coverage $< -o $(PROJ_NAME)
