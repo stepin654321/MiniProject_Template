@@ -35,7 +35,7 @@ typedef struct complex_t {
  * @param[in] cnum1 Pointer to complex number1
  * @param[in] cnum2 Pointer to complex number2 
  * @param[out] csum Pointer to store the computed result
- * @return error_t SUCCESS if operation is completed successfully. Error value otherwise.
+ * @return error_t 
  */
 error_t complex_sum(complex_t* cnum1, complex_t* cnum2, complex_t* csum);
 
@@ -43,18 +43,18 @@ error_t complex_sum(complex_t* cnum1, complex_t* cnum2, complex_t* csum);
 /**
  * @brief computes subtraction of two complex numbers
  * 
- * @param cnum1 
- * @param cnum2 
- * @param csum 
+ * @param[in] cnum1 
+ * @param[in] cnum2 
+ * @param[out] c_sub 
  * @return error_t 
  */
 error_t complex_sub(complex_t* cnum1, complex_t* cnum2, complex_t* c_sub);
 /**
  * @brief computes multiplication of complex numbers
  * 
- * @param cnum1 
- * @param cnum2 
- * @param csum 
+ * @param[in] cnum1 
+ * @param[in] cnum2 
+ * @param[out] cmul
  * @return error_t 
  */
 error_t complex_mul(complex_t* cnum1, complex_t* cnum2, complex_t *cmul);
@@ -62,9 +62,9 @@ error_t complex_mul(complex_t* cnum1, complex_t* cnum2, complex_t *cmul);
 /**
  * @brief computes division of complex numbers
  * 
- * @param cnum1 
- * @param cnum2 
- * @param csum 
+ * @param[in] cnum1 
+ * @param[in] cnum2 
+ * @param[out] cdiv
  * @return error_t 
  */
 error_t complex_div(complex_t* cnum1, complex_t* cnum2, complex_t* cdiv);
