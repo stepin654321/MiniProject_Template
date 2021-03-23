@@ -15,102 +15,229 @@ void tearDown()
 {
 }
 
-void test_zero(void)
-{
-    // Can ommit the below intialization as it is done at the declaration time
+void c_add(void){
     c1.real = 0;
     c1.imaginary = 0;
     
     c2.real = 0;
     c2.imaginary = 0;
-    
     TEST_ASSERT_EQUAL(SUCCESS, complex_sum(&c1, &c2, &result));
     TEST_ASSERT_EQUAL(0, result.real);
     TEST_ASSERT_EQUAL(0, result.imaginary);
 
-    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(0, result.real);
-    TEST_ASSERT_EQUAL(0, result.imaginary);
-
-    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(0, result.real);
-    TEST_ASSERT_EQUAL(0, result.imaginary);
-
-    TEST_ASSERT_EQUAL(ERROR_DIV_BY_ZERO, complex_div(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(0, result.real);
-    TEST_ASSERT_EQUAL(0, result.imaginary);
-}
-void test_positive(void)
-{
     c1.real = 25;
     c1.imaginary = 15;
     
     c2.real = 75;
     c2.imaginary = 95;
-    
     TEST_ASSERT_EQUAL(SUCCESS, complex_sum(&c1, &c2, &result));
     TEST_ASSERT_EQUAL(100, result.real);
     TEST_ASSERT_EQUAL(110, result.imaginary);
 
-    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(-50, result.real);
-    TEST_ASSERT_EQUAL(-80, result.imaginary);
-   
-    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(450, result.real);
-    TEST_ASSERT_EQUAL(3500, result.imaginary);
-   
-    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(0.6143, result.real);
-    TEST_ASSERT_EQUAL(0.2218, result.imaginary);
-}
-
-void test_negative(void)
-{
     c1.real = -25;
     c1.imaginary = -15;
     
     c2.real = 75;
     c2.imaginary = 95;
-
     TEST_ASSERT_EQUAL(SUCCESS, complex_sum(&c1, &c2, &result));
     TEST_ASSERT_EQUAL(50, result.real);
     TEST_ASSERT_EQUAL(80, result.imaginary);
-
-    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(-100, result.real);
-    TEST_ASSERT_EQUAL(-110, result.imaginary);
-    
-    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(-450, result.real);
-    TEST_ASSERT_EQUAL(-3500, result.imaginary);
-    
-    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c1, &c2, &result));
-    TEST_ASSERT_EQUAL(-0.2252, result.real);
-    TEST_ASSERT_EQUAL(0.0853, result.imaginary);
 
     c1.real = -25;
     c1.imaginary = -15;
     
     c2.real = -75;
     c2.imaginary = -95;
-    
     TEST_ASSERT_EQUAL(SUCCESS, complex_sum(&c1, &c2, &result));
     TEST_ASSERT_EQUAL(-100, result.real);
     TEST_ASSERT_EQUAL(-110, result.imaginary);
 
+    c1.real = 2;
+    c1.imaginary = 0;
+    
+    c2.real = -5;
+    c2.imaginary = 0;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_sum(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(-3, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);
+
+    c1.real = 0;
+    c1.imaginary = 10;
+    
+    c2.real = 0;
+    c2.imaginary = 5;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_sum(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(0, result.real);
+    TEST_ASSERT_EQUAL(15, result.imaginary);
+}
+
+void c_sub(void){
+    c1.real = 0;
+    c1.imaginary = 0;
+    
+    c2.real = 0;
+    c2.imaginary = 0;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(0, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);        
+
+    c1.real = 25;
+    c1.imaginary = 15;
+    
+    c2.real = 75;
+    c2.imaginary = 95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(-50, result.real);
+    TEST_ASSERT_EQUAL(-80, result.imaginary);
+
+    c1.real = -25;
+    c1.imaginary = -15;
+    
+    c2.real = 75;
+    c2.imaginary = 95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(-100, result.real);
+    TEST_ASSERT_EQUAL(-110, result.imaginary);
+
+    c1.real = -25;
+    c1.imaginary = -15;
+    
+    c2.real = -75;
+    c2.imaginary = -95;
     TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
     TEST_ASSERT_EQUAL(50, result.real);
     TEST_ASSERT_EQUAL(80, result.imaginary);
+
+    c1.real = 2;
+    c1.imaginary = 0;
     
+    c2.real = -5;
+    c2.imaginary = 0;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(7, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);
+
+    c1.real = 0;
+    c1.imaginary = 10;
+    
+    c2.real = 0;
+    c2.imaginary = 5;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_diff(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(0, result.real);
+    TEST_ASSERT_EQUAL(5, result.imaginary);
+}
+
+void c_mul(void){
+    c1.real = 0;
+    c1.imaginary = 0;
+    
+    c2.real = 0;
+    c2.imaginary = 0;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(0, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);
+
+    c1.real = 25;
+    c1.imaginary = 15;
+    
+    c2.real = 75;
+    c2.imaginary = 95;
     TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
     TEST_ASSERT_EQUAL(450, result.real);
     TEST_ASSERT_EQUAL(3500, result.imaginary);
+
+    c1.real = -25;
+    c1.imaginary = -15;
     
-    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c1, &c2, &result));
+    c2.real = 75;
+    c2.imaginary = 95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(-450, result.real);
+    TEST_ASSERT_EQUAL(-3500, result.imaginary);
+
+    c1.real = -25;
+    c1.imaginary = -15;
+    
+    c2.real = -75;
+    c2.imaginary = -95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(450, result.real);
+    TEST_ASSERT_EQUAL(3500, result.imaginary);
+
+    c1.real = 2;
+    c1.imaginary = 0;
+    
+    c2.real = -5;
+    c2.imaginary = 0;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(-10, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);    
+
+    c1.real = 0;
+    c1.imaginary = 10;
+    
+    c2.real = 0;
+    c2.imaginary = 5;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_mul(&c1, &c2, &result));
+    TEST_ASSERT_EQUAL(-50, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);  
+
+}
+
+void c_div(void){
+    c3.real = 0;
+    c3.imaginary = 0;
+    
+    c4.real = 0;
+    c4.imaginary = 0;
+    TEST_ASSERT_EQUAL(ERROR_DIV_BY_ZERO, complex_div(&c3, &c4, &result));
+    TEST_ASSERT_EQUAL(0, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);
+
+    c3.real = 25;
+    c3.imaginary = 15;
+    
+    c4.real = 75;
+    c4.imaginary = 95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c3, &c4, &result));
+    TEST_ASSERT_EQUAL(0.6143, result.real);
+    TEST_ASSERT_EQUAL(0.2218, result.imaginary);
+
+    c3.real = -25;
+    c3.imaginary = -15;
+    
+    c4.real = 75;
+    c4.imaginary = 95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c3, &c4, &result));
+    TEST_ASSERT_EQUAL(-0.2252, result.real);
+    TEST_ASSERT_EQUAL(0.0853, result.imaginary);
+
+    c3.real = -25;
+    c3.imaginary = -15;
+    
+    c4.real = -75;
+    c4.imaginary = -95;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c3, &c4, &result));
     TEST_ASSERT_EQUAL(0.2252, result.real);
     TEST_ASSERT_EQUAL(-0.0853, result.imaginary);
 
+    c3.real = 2;
+    c3.imaginary = 0;
+    
+    c4.real = -5;
+    c4.imaginary = 0;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c3, &c4, &result));
+    TEST_ASSERT_EQUAL(-0.4, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);
+
+    c3.real = 0;
+    c3.imaginary = 10;
+    
+    c4.real = 0;
+    c4.imaginary = 2;
+    TEST_ASSERT_EQUAL(SUCCESS, complex_div(&c3, &c4, &result));
+    TEST_ASSERT_EQUAL(5, result.real);
+    TEST_ASSERT_EQUAL(0, result.imaginary);
 }
 
 int main(void)
@@ -119,9 +246,10 @@ int main(void)
     UNITY_BEGIN();
 
     /* Run Test functions */
-    RUN_TEST(test_zero);
-    RUN_TEST(test_positive);
-    RUN_TEST(test_negative);
+    RUN_TEST(c_add);
+    RUN_TEST(c_sub);
+    RUN_TEST(c_mul);
+    RUN_TEST(c_div);
 
     /* Close the Unity Test Framework */
     return UNITY_END();
