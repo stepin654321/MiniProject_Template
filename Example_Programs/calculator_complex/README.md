@@ -26,4 +26,4 @@ typedef struct complex_t {
 
 ## Solutions
 
-* Repo link here
+* (Arnob Chowdhury - 256131) https://github.com/arc-arnob/MiniProject_Template
