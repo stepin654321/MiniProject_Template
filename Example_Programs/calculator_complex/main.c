@@ -3,12 +3,12 @@
 int main()
 {
     //TODO Write all the logic for Calculator app
-    printf("Complex calculator ");
+    printf("Complex calculator \n");
 
-    complex_t* a;
-    complex_t*b;
-    complex_t*c;
-
+    complex_t a,b,c;
+    // static complex_t b={0,0};
+    // static complex_t c={0,0};
+    //int input_1,input_2,input_3,input_4;
     int choice;
     while(1)
     {
@@ -26,33 +26,33 @@ int main()
 
         if (choice >= 1 && choice <= 4)
         {   
-            int input_1,input_2,input_3,input_4;
+            
             printf("Enter a and b where a + ib is the first complex number.");
             printf("\na = ");
-            scanf("%d", &input_1);
+            scanf("%d", &a.real);
             printf("b = ");
-            scanf("%d", &input_2);
+            scanf("%d", &a.imaginary);
             printf("Enter c and d where c + id is the second complex number.");
             printf("\nc = ");
-            scanf("%d", &input_3);
+            scanf("%d", &b.real);
             printf("d = ");
-            scanf("%d", &input_4);
-            a->real = input_1;
-            a->imaginary = input_2;
-            b->real = input_3;
-            b->imaginary = input_4;
+            scanf("%d", &b.imaginary);
+            // a.real = input_1;
+            // a.imaginary = input_2;
+            // b.real = input_3;
+            // b.imaginary = input_4;
         }
-        if(choice == 1){printf("%s","Here0");
-            int res = complex_sum(&a,&b,&c);
+        if(choice == 1){
+            error_t res = complex_sum(&a,&b,&c);
         }
         if(choice == 2){
-            int res = complex_sub(&a,&b,&c);
+            error_t res = complex_sub(&a,&b,&c);
         }
         if(choice == 3){
-            int res = complex_mul(&a,&b,&c);
+            error_t res = complex_mul(&a,&b,&c);
         }
         if(choice == 4){
-            int res = complex_div(&a,&b,&c);
+            error_t res = complex_div(&a,&b,&c);
         }
   
   
