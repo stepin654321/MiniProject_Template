@@ -26,4 +26,4 @@ typedef struct complex_t {
 
 ## Solutions
 
-* [Arnob Chowdhury](https://github.com/arc-arnob/MiniProject_Template)
+* [Arnob Chowdhury](https://github.com/arc-arnob/MiniProject_Template/tree/master/Example_Programs/calculator_complex)
