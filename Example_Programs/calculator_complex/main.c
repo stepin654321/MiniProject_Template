@@ -5,9 +5,9 @@ int main()
     //TODO Write all the logic for Calculator app
     printf("Complex calculator \n");
 
-    complex_t a,b,c;
-    // static complex_t b={0,0};
-    // static complex_t c={0,0};
+    static complex_t a={0,0};
+    static complex_t b={0,0};
+    static complex_t c={0,0};
     //int input_1,input_2,input_3,input_4;
     int choice;
     while(1)
@@ -29,14 +29,14 @@ int main()
             
             printf("Enter a and b where a + ib is the first complex number.");
             printf("\na = ");
-            scanf("%d", &a.real);
+            scanf("%f", &a.real);
             printf("b = ");
-            scanf("%d", &a.imaginary);
+            scanf("%f", &a.imaginary);
             printf("Enter c and d where c + id is the second complex number.");
             printf("\nc = ");
-            scanf("%d", &b.real);
+            scanf("%f", &b.real);
             printf("d = ");
-            scanf("%d", &b.imaginary);
+            scanf("%f", &b.imaginary);
             // a.real = input_1;
             // a.imaginary = input_2;
             // b.real = input_3;
@@ -62,5 +62,5 @@ int main()
 
     return 0;
     //gcc -I inc -I unity unity/unity.c src/complex_div.c src/complex_mul.c src/complex_sub.c src/complex_sum.c test/test_complex_calculator.c -o test_run.exe
-    //
+    //gcc -I inc src/complex_div.c src/complex_mul.c src/complex_sub.c src/complex_sum.c main.c -o prod_run.exe
 }
