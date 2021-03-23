@@ -1,28 +1,56 @@
-PROD_NAME = prod_run
-TEST_NAME = test_run
+PROJ_NAME = Complex_Calculator
+TEST_PROJ_NAME = Test_$(PROJ_NAME)
+
+BUILD_DIR = Build
+
 SRC = src/complex_div.c \
 src/complex_mul.c \
 src/complex_sub.c \
 src/complex_sum.c \
-main.c
 
-SRC_TEST = src/complex_div.c \
-src/complex_mul.c \
-src/complex_sub.c \
-src/complex_sum.c \
+TEST_SRC = test/test_complex_calculator.c\
+unity/unity.c
 
-INC_T = unity
-INC_H = inc
+INC_H = -Iinc
+INC_T = -Iunity
 
-TEST = unity/unity.c \
-test/test_complex_calculator.c
+#To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
+ifdef OS
+   RM = del /q
+   FixPath = $(subst /,\,$1)
+   EXEC = exe
+else
+   ifeq ($(shell uname), Linux)
+      RM = rm -rf
+      FixPath = $1
+	  EXEC = out
+   endif
+endif
 
-$(PROD_NAME).exe : $(SRC)
-	gcc -I $(INC_H) $(SRC) -o $(PROD_NAME).exe
+# Makefile will not run target command if the name with file already exists. To override, use .PHONY
+.PHONY : all test coverage run clean doc
 
-$(TEST_NAME).exe : $(SRC_TEST) $(TEST)
-	gcc -I $(INC_H) -I $(INC_T) $(TEST) $(SRC_TEST) -o $(TEST_NAME).exe
-run_prod :
-	$(PROD_NAME).exe
-run_test :
-	$(TEST_NAME).exe
+all:$(BUILD_DIR)
+	gcc main.c $(SRC) $(INC_H) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+
+run: all
+	$(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+
+test: $(SRC) $(TEST_SRC)
+	gcc $^ $(INC_T) $(INC_H) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+
+coverage:${PROJECT_NAME}
+	gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	gcov -a $(SRC)
+
+doc:
+	make -C doc
+$(BUILD_DIR):
+	mkdir $(BUILD_DIR)
+
+clean:
+	$(RM) $(call FixPath,$(BUILD_DIR)/*)
+	make clean -C doc
+	rmdir $(BUILD_DIR) doc/html
