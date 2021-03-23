@@ -8,12 +8,10 @@ error_t complex_div(complex_t* s1, complex_t* s2, complex_t* res){
         return  ERROR_DIV_BY_ZERO;
     }
 
-    float a=(((s1->real)*(s2->real))+((s1->imaginary)*(s2->imaginary)))/(pow(s2->real,2)+pow(s2->imaginary,2));
-    float b=(((s2->real)*(s1->imaginary))-((s1->real)*(s2->imaginary)))/(pow(s2->real,2)+pow(s2->imaginary,2));
+    res->real = (((s1->real)*(s2->real))+((s1->imaginary)*(s2->imaginary)))/(pow(s2->real,2)+pow(s2->imaginary,2));
+    res->imaginary =(((s2->real)*(s1->imaginary))-((s1->real)*(s2->imaginary)))/(pow(s2->real,2)+pow(s2->imaginary,2));
 
-    res->real = a;
-    res->imaginary = b;
-    printf("The division is %f + i%f\n", a,b);
+    printf("The division is %f + i%f\n", res->real,res->imaginary);
     return SUCCESS;
 
 }

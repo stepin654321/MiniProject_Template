@@ -8,7 +8,6 @@ int main()
     static complex_t a={0,0};
     static complex_t b={0,0};
     static complex_t c={0,0};
-    //int input_1,input_2,input_3,input_4;
     int choice;
     while(1)
     {

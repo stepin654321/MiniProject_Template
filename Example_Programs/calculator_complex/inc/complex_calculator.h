@@ -1,6 +1,6 @@
 /**
  * @file complex_calculator.h
- * @author your name (you@domain.com)
+ * @author Arnob
  * @brief Functions to perform Sum, Difference, Division and Multiplication on complex Varibales of \ref complex_t
  * @version 0.1
  * @date 2021-03-22
