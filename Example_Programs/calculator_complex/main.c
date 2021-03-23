@@ -43,16 +43,16 @@ int main()
             // b.imaginary = input_4;
         }
         if(choice == 1){
-            error_t res = complex_sum(&a,&b,&c);
+            complex_sum(&a,&b,&c);
         }
         if(choice == 2){
-            error_t res = complex_sub(&a,&b,&c);
+            complex_sub(&a,&b,&c);
         }
         if(choice == 3){
-            error_t res = complex_mul(&a,&b,&c);
+            complex_mul(&a,&b,&c);
         }
         if(choice == 4){
-            error_t res = complex_div(&a,&b,&c);
+            complex_div(&a,&b,&c);
         }
   
   
