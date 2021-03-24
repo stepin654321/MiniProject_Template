@@ -3,7 +3,10 @@ TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
 BUILD_DIR = Build
 
-SRC = src/complex_calculator.c
+SRC = src/complex_sum.c\
+src/complex_sub.c\
+src/complex_multiply.c\
+src/complex_divide.c
 
 TEST_SRC = test/test_complex_calculator.c\
 unity/unity.c
