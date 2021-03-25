@@ -32,4 +32,4 @@ typedef struct complex_t {
 * By [258009](https://github.com/bgvmysore/Complex_calculator)
 * By [Hemanth A - 256889](https://github.com/hemanth-asapu/demoproj1/tree/main/complex_calculator)
 * By [Rohan Gupta](https://github.com/256018/Implementing_Calculator)
-* By [Sarthak Naithani] (https://github.com/sarthaknaithani/260757_complex_calculator)
+* By [Sarthak Naithani](https://github.com/sarthaknaithani/260757_complex_calculator)
