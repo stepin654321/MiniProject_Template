@@ -49,3 +49,4 @@ typedef struct info_t {
 
 ## Solutions
 * Repo link to the implementations go here
+* By [Rohan Gupta](https://github.com/256018/Question2)
