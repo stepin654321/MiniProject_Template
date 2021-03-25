@@ -50,3 +50,4 @@ typedef struct info_t {
 ## Solutions
 * By [Nikhil Nevin Vas](https://github.com/nikhilvas123/MiniProject_Template/tree/solution_2a/Example_Programs/programming_concpets/Questions_2a)
 * By [Milan Apegaonkar](https://github.com/255934/Q_2_sol/tree/master)
+* By [Rohan Gupta](https://github.com/256018/Question2)
