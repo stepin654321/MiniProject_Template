@@ -53,4 +53,5 @@ typedef struct info_t {
 * By [Arnob Chowdhury-256131](https://github.com/arc-arnob/LnT-Assignments/tree/master/Questions_2a)
 * By [Rohan Gupta](https://github.com/256018/Question2)
 * By [Hemanth A - 256889 - assignment 2a and 2b](https://github.com/hemanth-asapu/demoproj1/tree/main/assignment_2a_2b)
+* By [Shravya K N](https://github.com/28-shravya/Solution-for-Question2a-StepIn.git)
 
