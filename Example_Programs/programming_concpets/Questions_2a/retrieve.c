@@ -1,3 +1,14 @@
+/**
+ * @file retrieve.c
+ * @author Vivek Tiwari
+ * @brief  Declare a function name retrieve that will extract the data from csv file and display onto screen.
+ * @version 0.1
+ * @date 2021-03-29
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include "header_file.h"
 #include<stdio.h>
 #include <string.h>

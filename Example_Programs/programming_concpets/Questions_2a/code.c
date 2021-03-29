@@ -4,5 +4,5 @@
 
 int main(){
 
-    retrieve("test.csv");
+    retrieve("data.csv");
 }
