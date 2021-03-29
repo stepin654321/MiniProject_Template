@@ -48,4 +48,9 @@ typedef struct info_t {
 * [File Handling in C, In Just A Few Hours!](https://aticleworld.com/file-handling-in-c/)
 
 ## Solutions
-* Repo link to the implementations go here
+* By [Nikhil Nevin Vas](https://github.com/nikhilvas123/MiniProject_Template/tree/solution_2a/Example_Programs/programming_concpets/Questions_2a)
+* By [Milan Apegaonkar](https://github.com/255934/Q_2_sol/tree/master)
+* By [Arnob Chowdhury-256131](https://github.com/arc-arnob/LnT-Assignments/tree/master/Questions_2a)
+* By [Rohan Gupta](https://github.com/256018/Question2)
+* By [Hemanth A - 256889 - assignment 2a and 2b](https://github.com/hemanth-asapu/demoproj1/tree/main/assignment_2a_2b)
+
