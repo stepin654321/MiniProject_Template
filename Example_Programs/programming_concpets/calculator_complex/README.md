@@ -41,4 +41,4 @@ typedef struct complex_t {
 * By [Sarthak Naithani](https://github.com/sarthaknaithani/260757_complex_calculator)
 * By [255919 Gobikumaar-Sivagnanam](https://github.com/Gobikumaar-Sivagnanam/Learnings-Week-2)
 * By [258070](https://github.com/PramodhMahadeshKM/Complex_Calculator)
-
+* By [Sagar Paryani](https://github.com/ParyaniSagar/Complex_Calculator)
