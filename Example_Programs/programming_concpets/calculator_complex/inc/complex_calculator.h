@@ -8,7 +8,8 @@
  * @copyright Copyright (c) 2021
  * 
  */
-
+#ifndef __COMPLEX_CALCULATOR_H__
+#define __COMPLEX_CALCULATOR_H__
 /**
  * @brief Error values for calculator operations
  * 
@@ -39,8 +40,37 @@ typedef struct complex_t {
  */
 error_t complex_sum(complex_t* cnum1, complex_t* cnum2, complex_t* csum);
 
+/**
+* @brief computes difference of teh two complex numbers
+ * 
+ * @param[in] cnum1 Pointer to complex number1
+ * @param[in] cnum2 Pointer to complex number2 
+ * @param[out] cdiff Pointer to store the computed result
+ * @return error_t SUCCESS if operation is completed successfully. Error value otherwise.
+ */
+
+error_t complex_diff(complex_t* cnum1, complex_t* cnum2, complex_t* cdiff);
 
 /**
- * @brief TODO Add the remaining functions
+* @brief computes product of teh two complex numbers
  * 
+ * @param[in] cnum1 Pointer to complex number1
+ * @param[in] cnum2 Pointer to complex number2 
+ * @param[out] cmul Pointer to store the computed result
+ * @return error_t SUCCESS if operation is completed successfully. Error value otherwise.
  */
+
+error_t complex_mul(complex_t* cnum1, complex_t* cnum2, complex_t* cmul);
+
+/**
+* @brief computes division of teh two complex numbers
+ * 
+ * @param[in] cnum1 Pointer to complex number1
+ * @param[in] cnum2 Pointer to complex number2 
+ * @param[out] csum Pointer to store the computed result
+ * @return error_t SUCCESS if operation is completed successfully. Error value otherwise.
+ */
+
+error_t complex_div(complex_t* cnum1, complex_t* cnum2, complex_t* cdiv);
+
+#endif
