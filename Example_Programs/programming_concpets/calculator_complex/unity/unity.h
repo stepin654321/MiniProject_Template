@@ -56,6 +56,7 @@ void verifyTest(void);
  * Configuration Options
  *-------------------------------------------------------
  * All options described below should be passed as a compiler flag to all files using Unity. If you must add #defines, place them BEFORE the #include above.
+
  * Integers/longs/pointers
  *     - Unity attempts to automatically discover your integer sizes
  *       - define UNITY_EXCLUDE_STDINT_H to stop attempting to look in <stdint.h>
@@ -65,6 +66,7 @@ void verifyTest(void);
  *       - set UNITY_INT_WIDTH
  *       - set UNITY_LONG_WIDTH
  *       - set UNITY_POINTER_WIDTH
+
  * Floats
  *     - define UNITY_EXCLUDE_FLOAT to disallow floating point comparisons
  *     - define UNITY_FLOAT_PRECISION to specify the precision to use when doing TEST_ASSERT_EQUAL_FLOAT
@@ -74,18 +76,24 @@ void verifyTest(void);
  *     - define UNITY_DOUBLE_PRECISION to specify the precision to use when doing TEST_ASSERT_EQUAL_DOUBLE
  *     - define UNITY_DOUBLE_TYPE to specify something other than double
  *     - define UNITY_EXCLUDE_FLOAT_PRINT to trim binary size, won't print floating point values in errors
+
  * Output
  *     - by default, Unity prints to standard out with putchar.  define UNITY_OUTPUT_CHAR(a) with a different function if desired
  *     - define UNITY_DIFFERENTIATE_FINAL_FAIL to print FAILED (vs. FAIL) at test end summary - for automated search for failure
+
  * Optimization
  *     - by default, line numbers are stored in unsigned shorts.  Define UNITY_LINE_TYPE with a different type if your files are huge
  *     - by default, test and failure counters are unsigned shorts.  Define UNITY_COUNTER_TYPE with a different type if you want to save space or have more than 65535 Tests.
+
  * Test Cases
  *     - define UNITY_SUPPORT_TEST_CASES to include the TEST_CASE macro, though really it's mostly about the runner generator script
+
  * Parameterized Tests
  *     - you'll want to create a define of TEST_CASE(...) which basically evaluates to nothing
+
  * Tests with Arguments
  *     - you'll want to define UNITY_USE_COMMAND_LINE_ARGS if you have the test runner passing arguments to Unity
+
  *-------------------------------------------------------
  * Basic Fail and Ignore
  *-------------------------------------------------------*/
