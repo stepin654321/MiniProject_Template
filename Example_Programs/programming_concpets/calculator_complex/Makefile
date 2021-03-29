@@ -1,53 +1,29 @@
-PROJ_NAME = Complex_Calculator
-TEST_PROJ_NAME = Test_$(PROJ_NAME)
+PROJECT=COMPLEX_CAL
 
-BUILD_DIR = Build
+SRC=src/complex_cal.c
 
-SRC = src/complex_calculator.c
-
-TEST_SRC = test/test_complex_calculator.c\
+TEST= test/test_complex_cal.c\
 unity/unity.c
 
-INC = -Iinc\
--Iunity
+INC=-I inc\
+-I unity
 
-#To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
-ifdef OS
-   RM = del /q
-   FixPath = $(subst /,\,$1)
-   EXEC = exe
-else
-   ifeq ($(shell uname), Linux)
-      RM = rm -rf
-      FixPath = $1
-	  EXEC = out
-   endif
-endif
+.PHONY: run clean test doc all
 
-# Makefile will not run target command if the name with file already exists. To override, use .PHONY
-.PHONY : all test coverage run clean doc
+$(PROJECT):all
 
-all:$(BUILD_DIR)
-	gcc main.c $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+all: $(SRC) $(TEST)
+	gcc $(INC) $(TEST) $(SRC) -o $(PROJECT).out
 
-run: all
-	$(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+test: $(SRC) $(TEST)
+	gcc $(INC) $(TEST) $(SRC) -o $(PROJECT).out
+	./$(PROJECT).out
 
-test: $(SRC) $(TEST_SRC)
-	gcc $^ $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+run: $(PROJECT)
+	./$(PROJECT).out
 
-coverage:${PROJECT_NAME}
-	gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-	gcov -a $(SRC)
+clean: 
+	rm $(PROJECT).out	
 
-doc:
-	make -C doc
-$(BUILD_DIR):
-	mkdir $(BUILD_DIR)
 
-clean:
-	$(RM) $(call FixPath,$(BUILD_DIR)/*)
-	make clean -C doc
-	rmdir $(BUILD_DIR) doc/html
+
