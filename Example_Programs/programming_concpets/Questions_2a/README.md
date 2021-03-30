@@ -56,3 +56,4 @@ typedef struct info_t {
 * By [Hemanth A - 256889 - assignment 2a and 2b](https://github.com/hemanth-asapu/demoproj1/tree/main/assignment_2a_2b)
 * By [Shravya K N](https://github.com/28-shravya/Solution-for-Question2a-StepIn.git)
 * By [Ayushman 255949](https://github.com/255949/CSV_Read)
+* By [Bhargav R - 258009](https://github.com/bgvmysore/csv_struct_ltts_stepin)
