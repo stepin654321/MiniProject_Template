@@ -1,7 +1,8 @@
 #include "unity.h"
-#include "../calculator_operations.h"
+#include <calculator_operations.h>
 
 /* Modify these two lines according to the project */
+#include <calculator_operations.h>
 #define PROJECT_NAME    "Calculator"
 
 /* Prototypes for all the test functions */
@@ -33,44 +34,29 @@ int main()
 
 /* Write all the test functions */ 
 void test_add(void) {
-  struct complex_t a,b;
-  a.real = 5; a.imaginary = 6;
-  b.real = 10; b.imaginary = 5;
-  TEST_ASSERT_EQUAL("15.000000 11.000000", add(a, b));
+  TEST_ASSERT_EQUAL(30, add(10, 20));
   
   /* Dummy fail*/
-  TEST_ASSERT_EQUAL("15.000000 10.000000", add(a,b));
+  TEST_ASSERT_EQUAL(15000, add(7500, 7500));
 }
 
 void test_subtract(void) {
-  struct complex_t a,b, ans;
-  a.real = 5; a.imaginary = 6;
-  b.real = 10; b.imaginary = 5;
-  ans.real = -5; ans.imaginary = 1;
-  TEST_ASSERT(ans == subtract(a, b));
+  TEST_ASSERT_EQUAL(-3, subtract(0, 3));
   
   /* Dummy fail*/
-  TEST_ASSERT_EQUAL("-5.000000 14.000000", subtract(a, b));
+  TEST_ASSERT_EQUAL(100, subtract(1000, 900));
 }
 
 void test_multiply(void) {
-  struct complex_t a,b,ans;
-  a.real = 5; a.imaginary = 6;
-  b.real = 10; b.imaginary = 5;
-  ans.real = 20; ans.imaginary = 85;
-  TEST_ASSERT(ans == multiply(a, b));
+  TEST_ASSERT_EQUAL(0, multiply(1, 0));
   
   /* Dummy fail*/
-  TEST_ASSERT_EQUAL("20.000000 8.000000", multiply(a, b));
+  TEST_ASSERT_EQUAL(10, multiply(2, 5));
 }
 
 void test_divide(void) {
-  struct complex_t a,b, ans;
-  a.real = 5; a.imaginary = 6;
-  b.real = 10; b.imaginary = 5;
-  ans.real = 0.64; ans.imaginary = 0.28;
-  TEST_ASSERT_EQUAL(ans, divide(a, b));
+  TEST_ASSERT_EQUAL(0, divide(1, 0));
   
   /* Dummy fail*/
-  TEST_ASSERT_EQUAL("0.640000 0.280000", divide(a, b));
+  TEST_ASSERT_EQUAL(1, divide(2, 2));
 }
