@@ -47,5 +47,6 @@ typedef struct complex_t {
 * By [256182](https://github.com/256182/Complex_Calc)
 * By [Khushbu Majithia-261406](https://github.com/Khushbu-Majithia-261406/STEP_IN_PROGRAMS)
 * By [Indiya B Henly](https://github.com/indiya77/complex_calculator.git)
+* By [Annarose K](https://github.com/AnnaroseK/SFID-255976complex_calculator)
 * By [Jeevak Raj](https://github.com/JeevakRaj/LTTS_Stepin_Exercises/tree/main/Question_1a_Complex_Calculator)
 * By [Vivek Valagadri](https://github.com/vivekvalagadri/Stepin.git)
