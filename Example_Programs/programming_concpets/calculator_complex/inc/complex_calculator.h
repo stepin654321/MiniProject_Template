@@ -1,46 +1,63 @@
 /**
  * @file complex_calculator.h
- * @author your name (you@domain.com)
+ * @author your name (abhishek.1599@gmail.com)
  * @brief Functions to perform Sum, Difference, Division and Multiplication on complex Varibales of \ref complex_t
  * @version 0.1
- * @date 2021-03-22
+ * @date 2021-03-30
  * 
  * @copyright Copyright (c) 2021
  * 
  */
 
-/**
- * @brief Error values for calculator operations
- * 
- */
-typedef enum error_t {
-    ERROR_DIV_BY_ZERO = -2, /**< Division by 0 error */
-    ERROR_NULL_PTR = -1,    /**< Null pointer dereferncing error */
-    SUCCESS = 0             /**< Compute operation is successful */
-}error_t;
+#ifndef __COMPLEX_CALCULATOR_H__
+#define __COMPLEX_CALCULATOR_H__
 
 /**
- * @brief Structure for Complex number
+ * @brief 
  * 
  */
-typedef struct complex_t {
+
+typedef struct complex {
     float real;         /**< real part of the complex number */
     float imaginary;    /**< real part of the complex number */
-} complex_t;
-
+} complex;
+/**
+ * @brief 
+ * 
+ * @param a1 
+ * @param a2 
+ * @return complex 
+ */
+complex add(complex a1, complex a2);
 
 /**
-* @brief computes sum of teh two complex numbers
+ * @brief 
  * 
- * @param[in] cnum1 Pointer to complex number1
- * @param[in] cnum2 Pointer to complex number2 
- * @param[out] csum Pointer to store the computed result
- * @return error_t SUCCESS if operation is completed successfully. Error value otherwise.
+ * @param m1 
+ * @param m2 
+ * @return complex 
  */
-error_t complex_sum(complex_t* cnum1, complex_t* cnum2, complex_t* csum);
 
+complex multiply(complex m1, complex m2);
 
 /**
- * @brief TODO Add the remaining functions
+ * @brief 
  * 
+ * @param d1 
+ * @param d2 
+ * @return complex 
  */
+
+complex division(complex d1, complex d2);
+
+/**
+ * @brief 
+ * 
+ * @param s1 
+ * @param s2 
+ * @return complex 
+ */
+
+complex subtract(complex s1, complex s2);
+
+#endif

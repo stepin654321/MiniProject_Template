@@ -1,9 +1,9 @@
 #include "complex_calculator.h"
 #include "unity.h"
 
-static complex_t c1 = {0, 0};
-static complex_t c2 = {0, 0};
-static complex_t result = {0, 0};
+static complex c1 = {0, 0};
+static complex c2 = {0, 0};
+static complex result = {0, 0};
 /* Required by the unity test framework */
 void setUp()
 {
