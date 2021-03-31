@@ -58,3 +58,4 @@ typedef struct info_t {
 * By [Ayushman 255949](https://github.com/255949/CSV_Read)
 * By [Sagar Paryani](https://github.com/ParyaniSagar/Data-from-CSV-File)
 * By [Bhargav R - 258009](https://github.com/bgvmysore/csv_struct_ltts_stepin)
+* By [Roopesh Verma](https://github.com/Roopesh16/2a-2b.git)
