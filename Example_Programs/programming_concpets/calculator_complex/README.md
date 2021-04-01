@@ -34,3 +34,4 @@ typedef struct complex_t {
 * By  [Ayushman 255949](https://github.com/255949/Complex_calaculator)
 * By [Jay Singh](https://github.com/codemonk-007/LnT-Stepin-Projects/edit/main/calculator_complex)
 * By [Sobin Rajan](https://github.com/sobinrajan1999/Qestions1a-ltts-)
+* By [Shriya Naik](https://github.com/Shriya-265054/linux/tree/master/complex_calculator)
