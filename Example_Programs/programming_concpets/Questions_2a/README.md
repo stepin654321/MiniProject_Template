@@ -47,7 +47,9 @@ typedef struct info_t {
 * What is a [CSV File](https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/)
 * [File Handling in C, In Just A Few Hours!](https://aticleworld.com/file-handling-in-c/)
 
+
 ## Solutions
+* By [Vivek Tiwari (265092) Question2a](https://github.com/Tiwari007/L-T-Week-Modules/tree/master/Week%203)
 * By [Nikhil Nevin Vas](https://github.com/nikhilvas123/MiniProject_Template/tree/solution_2a/Example_Programs/programming_concpets/Questions_2a)
 * By [Milan Apegaonkar](https://github.com/255934/Q_2_sol/tree/master)
 * By [Arnob Chowdhury-256131](https://github.com/arc-arnob/LnT-Assignments/tree/master/Questions_2a)
@@ -55,3 +57,10 @@ typedef struct info_t {
 * By [Hemanth A - 256889 - assignment 2a and 2b](https://github.com/hemanth-asapu/demoproj1/tree/main/assignment_2a_2b)
 * By [Shravya K N](https://github.com/28-shravya/Solution-for-Question2a-StepIn.git)
 * By [Ayushman 255949](https://github.com/255949/CSV_Read)
+* By [Sagar Paryani](https://github.com/ParyaniSagar/Data-from-CSV-File)
+* By [Bhargav R - 258009](https://github.com/bgvmysore/csv_struct_ltts_stepin)
+* By [Prakhar Rastogi-256102](https://github.com/PrakharRastogi123/LTTS_TimeToCode_Assesment/tree/main/Question_2a_2b_Soln)
+* By [Gobikumaar-Sivagnanam 255919](https://github.com/Gobikumaar-Sivagnanam/Learnings-Week-3)
+* By [Roopesh Verma](https://github.com/Roopesh16/2a-2b.git)
+* By [258274](https://github.com/Ankana9910/Begin.git)
+* By [Jeevak Raj](https://github.com/JeevakRaj/LTTS_Stepin_Exercises/tree/main/Question_2a_array_of_structures)
