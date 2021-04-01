@@ -32,13 +32,15 @@ typedef struct complex_t {
 /**
 * @brief computes sum of teh two complex numbers
  * 
- * @param[in] cnum1 Pointer to complex number1
- * @param[in] cnum2 Pointer to complex number2 
- * @param[out] csum Pointer to store the computed result
+ * @param[in] c1 Pointer to complex number1
+ * @param[in] c2 Pointer to complex number2 
+ * @param[out] result Pointer to store the computed result
  * @return error_t SUCCESS if operation is completed successfully. Error value otherwise.
  */
-error_t complex_sum(complex_t* cnum1, complex_t* cnum2, complex_t* csum);
-
+error_t complex_sum(complex_t* c1, complex_t* c2, complex_t* result);
+error_t complex_sub(complex_t* c1, complex_t* c2, complex_t* result);
+error_t complex_mul(complex_t* c1, complex_t* c2, complex_t* result);
+error_t complex_div(complex_t* c1, complex_t* c2, complex_t* result);
 
 /**
  * @brief TODO Add the remaining functions
