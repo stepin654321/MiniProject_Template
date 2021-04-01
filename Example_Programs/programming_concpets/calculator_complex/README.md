@@ -50,3 +50,4 @@ typedef struct complex_t {
 * By [Annarose K](https://github.com/AnnaroseK/SFID-255976complex_calculator)
 * By [Jeevak Raj](https://github.com/JeevakRaj/LTTS_Stepin_Exercises/tree/main/Question_1a_Complex_Calculator)
 * By [Vivek Valagadri](https://github.com/vivekvalagadri/Stepin.git)
+* By [Prakhar Rastogi 256102](https://github.com/PrakharRastogi123/LTTS_TimeToCode_Assesment/tree/main/Question_1a_soln)
