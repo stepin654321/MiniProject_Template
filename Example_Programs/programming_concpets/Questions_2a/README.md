@@ -47,6 +47,7 @@ typedef struct info_t {
 * What is a [CSV File](https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/)
 * [File Handling in C, In Just A Few Hours!](https://aticleworld.com/file-handling-in-c/)
 
+
 ## Solutions
 * By [Vivek Tiwari (265092) Question2a](https://github.com/Tiwari007/L-T-Week-Modules/tree/master/Week%203)
 * By [Nikhil Nevin Vas](https://github.com/nikhilvas123/MiniProject_Template/tree/solution_2a/Example_Programs/programming_concpets/Questions_2a)
@@ -61,4 +62,5 @@ typedef struct info_t {
 * By [Prakhar Rastogi-256102](https://github.com/PrakharRastogi123/LTTS_TimeToCode_Assesment/tree/main/Question_2a_2b_Soln)
 * By [Gobikumaar-Sivagnanam 255919](https://github.com/Gobikumaar-Sivagnanam/Learnings-Week-3)
 * By [Roopesh Verma](https://github.com/Roopesh16/2a-2b.git)
-* By [258274] (https://github.com/Ankana9910/Begin.git)
+* By [258274](https://github.com/Ankana9910/Begin.git)
+* By [Jeevak Raj](https://github.com/JeevakRaj/LTTS_Stepin_Exercises/tree/main/Question_2a_array_of_structures)
