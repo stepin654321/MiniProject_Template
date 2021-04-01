@@ -9,6 +9,9 @@
  * 
  */
 
+#ifndef __COMPLEX_CALCULATOR_H__
+#define __COMPLEX_CALCULATOR_H__
+
 /**
  * @brief Error values for calculator operations
  * 
@@ -41,6 +44,8 @@ error_t complex_sum(complex_t* c1, complex_t* c2, complex_t* result);
 error_t complex_sub(complex_t* c1, complex_t* c2, complex_t* result);
 error_t complex_mul(complex_t* c1, complex_t* c2, complex_t* result);
 error_t complex_div(complex_t* c1, complex_t* c2, complex_t* result);
+
+#endif
 
 /**
  * @brief TODO Add the remaining functions
