@@ -1,0 +1,9 @@
+#include"program2.h"
+
+void printValues(dict values[])
+{
+    for(int i=0;i<4;i++)
+    {
+        printf("Name = %s, Email_ID = %s, Github_Link = %s", values[i].name, values[i].email_id, values[i].github_link);
+    }
+}
