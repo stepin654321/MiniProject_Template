@@ -1,4 +1,5 @@
 #include <stdlib.h>
+//#include <stdio.h>
 #include <math.h>
 #include "complex_calculator.h"
 
@@ -11,6 +12,7 @@ error_t complex_sum(complex_t* c1, complex_t* c2, complex_t* result)
     
     result->real = c1->real + c2->real;
     result->imaginary = c1->imaginary + c2->imaginary;
+    //printf("%d\n", result->real);
 
     return SUCCESS;
 
@@ -55,4 +57,9 @@ error_t complex_div(complex_t *c1, complex_t *c2, complex_t *result)
 
         return SUCCESS;
     }
+}
+
+int main() 
+{
+    
 }

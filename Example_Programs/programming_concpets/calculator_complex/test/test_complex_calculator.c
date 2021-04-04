@@ -1,5 +1,6 @@
 #include "complex_calculator.h"
 #include "unity.h"
+#include "unity_internals.h"
 
 static complex_t c1 = {0, 0};
 static complex_t c2 = {0, 0};
@@ -263,7 +264,7 @@ void cdiv(void)
     TEST_ASSERT_EQUAL(0, result.imaginary);
 }
 
-int test_main(void)
+int main(void)
 
 {
     /* Initiate the Unity Test Framework */
