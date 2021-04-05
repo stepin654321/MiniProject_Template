@@ -27,3 +27,6 @@ A Box is associated with following attributes:
 * Follow Modular programming and multifile approach
 * Create Makefile with targets for compiling and testing, analysis and coverage.
 * Follow best practices while writing the code.
+
+## Solutions
+* By [Rohan Gupta](https://github.com/256018/Box_Code)
