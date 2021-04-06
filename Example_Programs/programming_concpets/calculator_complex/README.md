@@ -53,3 +53,4 @@ typedef struct complex_t {
 * By [Vivek Valagadri](https://github.com/vivekvalagadri/Stepin.git)
 * BY [Himanshu Kaushish 257170](https://github.com/Himanshu257170/Complex_Calcuator.git)
 * By [Milan Apegaonkar 255934](https://github.com/255934/Question1/tree/master/complex_calculator)
+* By [Sai Sanath Potnuru 256233](https://github.com/Saisanathpotnuru/LTTS_TRAINING/tree/main/question_1a)
