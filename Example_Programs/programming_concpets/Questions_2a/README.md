@@ -64,3 +64,4 @@ typedef struct info_t {
 * By [Roopesh Verma](https://github.com/Roopesh16/2a-2b.git)
 * By [258274](https://github.com/Ankana9910/Begin.git)
 * By [Jeevak Raj](https://github.com/JeevakRaj/LTTS_Stepin_Exercises/tree/main/Question_2a_array_of_structures)
+* By [Madhura K- 260459](https://github.com/Madhuraaaaa/C-programming/tree/main/q.2a)
