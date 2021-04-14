@@ -19,6 +19,8 @@ int main() {
   int a = 10, b = 20, c;
   int i = 3;
 
+  (fparr[0])(10, 20);
+  
   c = (fparr[i])(a, b); // i can be 0,1,2,3
   // what if i==4
 

@@ -36,3 +36,9 @@ int main() {
 
   return 0;
 }
+
+
+a = b * c + d;
+
+//unsequenced
+a = *ptr++ + ++*ptr
