@@ -1,0 +1,109 @@
+        -:    0:Source:main.c
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <windows.h>
+        -:    3:#include <time.h>
+        -:    4://#include "block.h"
+        -:    5:#include "gameboard_operations.h"
+        -:    6:#include "settings.h"
+        -:    7:
+        -:    8:
+        -:    9:/*    
+        -:   10:#define LEFT 75
+        -:   11:#define RIGHT 77
+        -:   12:#define UP 72
+        -:   13:#define SPACE 32
+        -:   14:
+        -:   15://Size of gameboard
+        -:   16:#define GBOARD_WIDTH 10
+        -:   17:#define GBOARD_HEIGHT 20 
+        -:   18:
+        -:   19://Starting point of gameboard
+        -:   20:#define GBOARD_ORIGIN_X 5
+        -:   21:#define GBOARD_ORIGIN_Y 3
+        -:   22:*/
+        -:   23:
+        -:   24:int level = 0;
+        -:   25:int up = 0;
+        -:   26:int score = 0;
+        -:   27:int block_id;
+        -:   28:int block_id_next;
+        -:   29:int speed = 15;
+        -:   30:int score_speed = 10;
+        -:   31:int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
+        -:   32:
+        -:   33:COORD curPos = {GBOARD_ORIGIN_X + GBOARD_WIDTH, GBOARD_ORIGIN_Y / 2};
+        -:   34:
+        -:   35:extern char blockModel[][4][4];
+        -:   36:
+        1:   37:int main()
+        -:   38:{
+        -:   39:	{
+        1:   40:		int line_cnt = 0;
+        1:   41:		RemoveCursor();
+        1:   41-block  0
+        1:   42:		DrawGameBoard();
+        1:   43:		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
+        1:   44:		srand((unsigned int)time(NULL));
+        1:   45:		block_id = (rand() % 7) * 4;
+        1:   46:		block_id_next = (rand() % 7) * 4;
+        -:   47:
+        -:   48:		//block_id = (rand() % 8) * 4;
+        -:   49:		//block_id_next = (rand() % 8) * 4;
+        -:   50:
+        1:   51:		Show_next_block(block_id_next);
+        -:   52:	}
+        -:   53:
+        -:   54:	while (1)
+        -:   55:	{
+        6:   56:		curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH;
+        7:   57:		curPos.Y = 0;
+        7:   58:		ScoreBoard();
+        7:   58-block  0
+       7*:   59:		if (IsGameOver()) break;
+    %%%%%:   59-block  0
+        -:   60:		while (1)
+        -:   61:		{
+       99:   62:			if (BlockDown() == 0)
+       99:   62-block  0
+        -:   63:			{
+       6*:   64:				if (block_id >= 28) RemoveLineBlock();
+        6:   64-block  0
+    %%%%%:   64-block  1
+    #####:   65:				else AddBlockToBoard(block_id);
+        6:   65-block  0
+        6:   66:				RedrawBlocks();
+        6:   66-block  0
+        6:   67:				if (up)
+        -:   68:				{
+    #####:   69:					lineup();
+    %%%%%:   69-block  0
+    #####:   70:					RedrawBlocks();
+        -:   71:				}
+        -:   72:			
+        6:   73:				break;
+        6:   73-block  0
+        -:   74:			}
+       93:   75:			Control_level(); 
+       93:   75-block  0
+       93:   76:			ProcessKeyInput();
+        -:   77:		}
+        6:   78:		RemoveFillUpLine(); 
+        6:   78-block  0
+        -:   79:		{
+        6:   80:			block_id = block_id_next;
+        6:   81:			Delete_next_block(blockModel[block_id]);
+        6:   82:			block_id_next = (rand() % 7) * 4;
+        -:   83:			//block_id_next = (rand() % 8) * 4;
+        6:   84:			Show_next_block(block_id_next);
+        -:   85:		}
+        -:   86:
+        -:   87:	}
+        -:   88:	{
+    #####:   89:		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
+    %%%%%:   89-block  0
+    #####:   90:		printf("Game Over!!");
+        -:   91:	}
+        -:   92:
+    #####:   93:	return 0;
+        -:   94:}
