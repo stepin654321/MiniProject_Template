@@ -15,7 +15,7 @@
 * 2) go to the folder `/build`
 * 3) run the Tetris.out.out from another cmd window (type cmd on your file hierarchy when you're in build)
 * 4) tetrisNoHold will start in that window
-* 5) update this readme with you score!!11!1!
+* 5) update this readme with your score!!11!1!
 * 6) leave your thoughts and suggestions
 
 
