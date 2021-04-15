@@ -6,6 +6,7 @@
 #include "block.h"
 #include "gameboard_operations.h"
 #include "settings.h"
+#include <conio.h>
 
 extern int level;
 extern int up;
@@ -56,7 +57,7 @@ void ShowBlock(char blockInfo[4][4])
         {
             SetCurrentCursorPos(curPos.X + (x * 2), curPos.Y + y);
             if (blockInfo[y][x] == 1)
-                printf("8");
+                printf("#");
         }
     }
     SetCurrentCursorPos(curPos.X, curPos.Y);
@@ -158,9 +159,9 @@ void RotateBlock()
 void ProcessKeyInput()
 {
     int i, key, y;
-    for (i = 0; i < 20; i++) //�� blockDown�ϰ� i�� 20�� ��ٷ��� �ϴ°�?
-    {                        //->1000ms�� 20������ ���� ���� �ǹ���
-        if (_kbhit() != 0)   //���� ���� ������?: ������ �ִ� �� 1�ʰ� �߻��ص� ó���ؾ� �ϹǷ�
+    for (i = 0; i < 20; i++) 
+    {                        
+        if (kbhit() != 0)   
         {
             key = getch();
             switch (key)
@@ -176,6 +177,9 @@ void ProcessKeyInput()
                 break;
             case SPACE:
                 SpaceDown();
+                break;
+            case ESC:
+                exit(0);
                 break;
             }
         }
@@ -274,7 +278,7 @@ void RedrawBlocks()
             cursY = y + GBOARD_ORIGIN_Y;
             SetCurrentCursorPos(cursX, cursY);
             if (gameBoardInfo[y][x] == 1)
-                printf("8");
+                printf("#");
             else
                 printf(" ");
         }

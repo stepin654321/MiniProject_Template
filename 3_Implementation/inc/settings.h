@@ -12,6 +12,7 @@
 #define RIGHT 77
 #define UP 72
 #define SPACE 32
+#define ESC 27
 
 //Size of gameboard
 #define GBOARD_WIDTH 10

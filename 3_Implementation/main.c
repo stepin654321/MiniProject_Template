@@ -6,7 +6,7 @@
 #include "settings.h"
 
 
-/*
+/*    
 #define LEFT 75
 #define RIGHT 77
 #define UP 72
@@ -45,14 +45,12 @@ int main()
 		block_id = (rand() % 7) * 4;
 		block_id_next = (rand() % 7) * 4;
 
-		//���찳 ���ϱ���
 		//block_id = (rand() % 8) * 4;
 		//block_id_next = (rand() % 8) * 4;
 
 		Show_next_block(block_id_next);
 	}
-	//�⺻����(Ŀ�������, �����Ǳ׸���, Ŀ����ġ, ���Ϸ�������)
-	//line_cnt=���� ���� �ؿ� ���� ���� ����
+
 	while (1)
 	{
 		curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH;
@@ -71,13 +69,13 @@ int main()
 					lineup();
 					RedrawBlocks();
 				}
-				//���� �ؿ��� �ö���°�
+			
 				break;
 			}
-			Control_level(); //���� ����
+			Control_level(); 
 			ProcessKeyInput();
 		}
-		RemoveFillUpLine(); //���� ä������ �����
+		RemoveFillUpLine(); 
 		{
 			block_id = block_id_next;
 			Delete_next_block(blockModel[block_id]);
@@ -85,12 +83,12 @@ int main()
 			//block_id_next = (rand() % 8) * 4;
 			Show_next_block(block_id_next);
 		}
-		//���� �̸����� ����
+
 	}
 	{
 		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
 		printf("Game Over!!");
 	}
-	//���ӿ��� ���
+
 	return 0;
 }
