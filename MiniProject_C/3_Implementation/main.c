@@ -81,8 +81,8 @@ int main()
 		{
 			block_id = block_id_next;
 			Delete_next_block(blockModel[block_id]);
-			//block_id_next = (rand() % 7) * 4;
-			block_id_next = (rand() % 8) * 4;
+			block_id_next = (rand() % 7) * 4;
+			//block_id_next = (rand() % 8) * 4;
 			Show_next_block(block_id_next);
 		}
 		//���� �̸����� ����
