@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <time.h>
-#include "block.h"
+//#include "block.h"
 #include "gameboard_operations.h"
 #include "settings.h"
 
@@ -32,7 +32,7 @@ int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
 
 COORD curPos = {GBOARD_ORIGIN_X + GBOARD_WIDTH, GBOARD_ORIGIN_Y / 2};
 
-
+extern char blockModel[][4][4];
 
 int main()
 {
@@ -42,12 +42,12 @@ int main()
 		DrawGameBoard();
 		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
 		srand((unsigned int)time(NULL));
-		//block_id = (rand() % 7) * 4;
-		//block_id_next = (rand() % 7) * 4;
+		block_id = (rand() % 7) * 4;
+		block_id_next = (rand() % 7) * 4;
 
 		//���찳 ���ϱ���
-		block_id = (rand() % 8) * 4;
-		block_id_next = (rand() % 8) * 4;
+		//block_id = (rand() % 8) * 4;
+		//block_id_next = (rand() % 8) * 4;
 
 		Show_next_block(block_id_next);
 	}

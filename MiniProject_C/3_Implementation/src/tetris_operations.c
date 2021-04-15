@@ -15,6 +15,7 @@ extern int block_id_next;
 extern int speed;
 extern int score_speed;
 extern int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
+//extern char blockModel[][4][4];
 
 extern COORD curPos;
 
@@ -79,7 +80,7 @@ void DeleteBlock(char blockInfo[4][4])
 }
 //���� ����
 
-int DetectCollision(int posX, int posY, char blockModel[4][4])
+int DetectCollision(int posX, int posY, char blockModelNow[4][4])
 {
     int x, y;
     int arrX = (posX - GBOARD_ORIGIN_X) / 2;
@@ -87,7 +88,7 @@ int DetectCollision(int posX, int posY, char blockModel[4][4])
 
     for (y = 0; y < 4; y++)
         for (x = 0; x < 4; x++)
-            if (blockModel[y][x] == 1 && gameBoardInfo[arrY + y][arrX + x] == 1)
+            if (blockModelNow[y][x] == 1 && gameBoardInfo[arrY + y][arrX + x] == 1)
                 return 0;
     return 1;
 }
@@ -138,8 +139,7 @@ int BlockDown()
 
 void SpaceDown()
 {
-    while (BlockDown())
-        ;
+    while (BlockDown());
 }
 //�����̽��ٸ� ����� �ѹ��� ������ ��
 
@@ -199,7 +199,7 @@ void DrawGameBoard()
     {
         SetCurrentCursorPos(GBOARD_ORIGIN_X + (GBOARD_WIDTH + 1) * 2, GBOARD_ORIGIN_Y + y);
         if (y == GBOARD_HEIGHT)
-            printf("J");
+            printf("-");
         else
             printf("|");
     }
@@ -331,13 +331,13 @@ void RemoveLineBlock()
 void ScoreBoard()
 {
     level = score / 20 + 1;
-    SetCurrentCursorPos(30, 15);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 12);
     printf("Level : ");
     printf("%d", level);
-    SetCurrentCursorPos(30, 16);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 13);
     printf("Score : ");
     printf("%d", score);
-    SetCurrentCursorPos(30, 17);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 14);
     printf("Speed :");
     printf("%d", score_speed);
 }
@@ -417,7 +417,7 @@ int IsGameOver()
 
 void Show_next_block(int shape)
 {
-    SetCurrentCursorPos(30, 7);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 4);
     ShowBlock(blockModel[shape]);
 }
 //���� ���� �����ֱ�
@@ -425,12 +425,12 @@ void Show_next_block(int shape)
 void Delete_next_block(char blockInfo[4][4])
 {
     int x, y;
-    SetCurrentCursorPos(30, 7);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 4);
     for (y = 0; y < 4; y++)
     {
         for (x = 0; x < 4; x++)
         {
-            SetCurrentCursorPos(30 + (x * 2), 7 + y);
+            SetCurrentCursorPos(GBOARD_ORIGIN_X + 25 + (x * 2), GBOARD_ORIGIN_Y + 4 + y);
             if (blockInfo[y][x] == 1)
                 printf(" ");
         }

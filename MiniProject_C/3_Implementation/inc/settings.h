@@ -19,6 +19,6 @@
 
 //Starting point of gameboard
 #define GBOARD_ORIGIN_X 5
-#define GBOARD_ORIGIN_Y 3
+#define GBOARD_ORIGIN_Y 5
 
 #endif
