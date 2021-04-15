@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <windows.h>
+#include <time.h>
+#include "block.h"
+#include "gameboard_operations.h"
+#include "settings.h"
+
+
+/*
+#define LEFT 75
+#define RIGHT 77
+#define UP 72
+#define SPACE 32
+
+//Size of gameboard
+#define GBOARD_WIDTH 10
+#define GBOARD_HEIGHT 20
+
+//Starting point of gameboard
+#define GBOARD_ORIGIN_X 5
+#define GBOARD_ORIGIN_Y 3
+*/
+
+int level = 0;
+int up = 0;
+int score = 0;
+int block_id;
+int block_id_next;
+int speed = 15;
+int score_speed = 10;
+int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
+
+COORD curPos = {GBOARD_ORIGIN_X + GBOARD_WIDTH, GBOARD_ORIGIN_Y / 2};
+
+
+
+int main()
+{
+	{
+		int line_cnt = 0;
+		RemoveCursor();
+		DrawGameBoard();
+		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
+		srand((unsigned int)time(NULL));
+		//block_id = (rand() % 7) * 4;
+		//block_id_next = (rand() % 7) * 4;
+
+		//���찳 ���ϱ���
+		block_id = (rand() % 8) * 4;
+		block_id_next = (rand() % 8) * 4;
+
+		Show_next_block(block_id_next);
+	}
+	//�⺻����(Ŀ�������, �����Ǳ׸���, Ŀ����ġ, ���Ϸ�������)
+	//line_cnt=���� ���� �ؿ� ���� ���� ����
+	while (1)
+	{
+		curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH;
+		curPos.Y = 0;
+		ScoreBoard();
+		if (IsGameOver()) break;
+		while (1)
+		{
+			if (BlockDown() == 0)
+			{
+				if (block_id >= 28) RemoveLineBlock();
+				else AddBlockToBoard(block_id);
+				RedrawBlocks();
+				if (up)
+				{
+					lineup();
+					RedrawBlocks();
+				}
+				//���� �ؿ��� �ö���°�
+				break;
+			}
+			Control_level(); //���� ����
+			ProcessKeyInput();
+		}
+		RemoveFillUpLine(); //���� ä������ �����
+		{
+			block_id = block_id_next;
+			Delete_next_block(blockModel[block_id]);
+			//block_id_next = (rand() % 7) * 4;
+			block_id_next = (rand() % 8) * 4;
+			Show_next_block(block_id_next);
+		}
+		//���� �̸����� ����
+	}
+	{
+		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
+		printf("Game Over!!");
+	}
+	//���ӿ��� ���
+	return 0;
+}

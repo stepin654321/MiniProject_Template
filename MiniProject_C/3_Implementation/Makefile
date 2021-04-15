@@ -1,12 +1,13 @@
 # Name of the project
-PROJECT_NAME = Calculator
+PROJECT_NAME = Tetris
 
 # Output directory
 BUILD = build
 
 # All source code files
-SRC = project_main.c\
-src/calculator_operations.c
+SRC = main.c\
+src/tetris_operations.c\
+
 
 # All test source files
 TEST_SRC = src/calculator_operations.c\
@@ -18,6 +19,19 @@ TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 # All include folders with header files
 INC	= -Iinc\
 -Iunity\
+
+ifdef OS
+	RM = del /q
+	FixPath = $(subst /,\,$1)
+	EXEC = exe
+else
+	ifeq ($(shell uname), Linux)
+		RM = rm -rf
+		FixPath = $1
+		EXEC = out
+	endif
+endif
+
 
 #Library Inlcudes
 #INCLUDE_LIBS = 
