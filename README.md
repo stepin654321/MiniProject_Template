@@ -1,6 +1,7 @@
 # TetrisNoHoldinPureC
 
 ![example workflow](https://github.com/technocrat13/MiniProject_Template/actions/workflows/main.yml/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/754ff015c0d445f69d5cae69dd70ced8)](https://www.codacy.com/gh/technocrat13/MiniProject_Template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=technocrat13/MiniProject_Template&amp;utm_campaign=Badge_Grade)
 
 
 * tetris base coded in C, with functional speed up and scoring algorithim
