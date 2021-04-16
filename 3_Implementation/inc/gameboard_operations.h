@@ -19,6 +19,7 @@ void SetCurrentCursorPos(int x, int y);
 
 COORD GetCurrentCursorPos(void);
 void RemoveCursor(void);
+void ShowCursorCustom(void);
 
 //gameboard block
 void ShowBlock(char blockInfo[4][4]);

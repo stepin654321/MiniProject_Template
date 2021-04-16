@@ -91,6 +91,7 @@ int main()
 		//SetCurrentCursorPos(start.X, start.Y);
 		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
 		printf("Game Over!!");
+		ShowCursorCustom();
 	}
 
 	return 0;

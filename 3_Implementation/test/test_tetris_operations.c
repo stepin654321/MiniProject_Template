@@ -26,8 +26,8 @@ COORD curPos = {GBOARD_ORIGIN_X + GBOARD_WIDTH, GBOARD_ORIGIN_Y / 2};
 //char blockModel[][4][4];
 
 /* Prototypes for all the test functions */
-void test_ShowBlock(void);
-int ShowBlock_tester();
+void test_HUD(void);
+int HUD_tester();
 //void test_subtract(void);
 //void test_multiply(void);
 //void test_divide(void);
@@ -46,7 +46,7 @@ int main()
   int line_cnt = 0;
   RemoveCursor();
   DrawGameBoard();
-  SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, start.Y);
+  SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
   srand((unsigned int)time(NULL));
   block_id = (rand() % 7) * 4;
   block_id_next = (rand() % 7) * 4;
@@ -57,7 +57,7 @@ int main()
   
 
   /* Run Test functions */
-  RUN_TEST(test_ShowBlock);
+  RUN_TEST(test_HUD);
   //RUN_TEST(test_subtract);
   //RUN_TEST(test_multiply);
   //RUN_TEST(test_divide);
@@ -67,23 +67,30 @@ int main()
   return UNITY_END();
 }
 
-int ShowBlock_tester() 
+int HUD_tester() 
 {
   Show_next_block(block_id_next);
-  SetCurrentCursorPos(start.X, start.Y + 30);
+  ScoreBoard();
+
+  //
+
+  SetCurrentCursorPos(0, start.Y + 25);
+  printf("Did the HUD show up?(Y/N): ");
+  ShowCursorCustom();
   char diagnostic;
   scanf("%c", &diagnostic);
-  printf("Print test\n");
-  printf("%c", diagnostic);
+  RemoveCursor();
+  if (diagnostic == 'Y' || diagnostic == 'y')
+    return 1;
+  return 0;
 
-  return 1;
 }
 
 /* Write all the test functions */
-void test_ShowBlock(void)
+void test_HUD(void)
 {
 
-  TEST_ASSERT_EQUAL(1, ShowBlock_tester());
+  TEST_ASSERT_EQUAL(1, HUD_tester());
 
   /* Dummy fail*/
   //TEST_ASSERT_EQUAL(15000, add(7500, 7500));

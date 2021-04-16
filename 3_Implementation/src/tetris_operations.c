@@ -24,7 +24,7 @@ extern COORD start;
 
 void SetCurrentCursorPos(int x, int y)
 {
-    COORD pos = {x, y};
+    COORD pos = {x, y + start.Y};
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 //Ŀ�� �ش� ��ġ�� �ֱ�
@@ -45,6 +45,15 @@ void RemoveCursor(void)
     CONSOLE_CURSOR_INFO curInfo;
     GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
     curInfo.bVisible = 0;
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
+}
+
+
+void ShowCursorCustom(void)
+{
+    CONSOLE_CURSOR_INFO curInfo;
+    GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
+    curInfo.bVisible = 1;
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
 }
 //Ŀ�� �����
@@ -423,7 +432,7 @@ int IsGameOver()
 
 void Show_next_block(int shape)
 {
-    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 4);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 4 - start.Y);
     ShowBlock(blockModel[shape]);
 }
 //���� ���� �����ֱ�

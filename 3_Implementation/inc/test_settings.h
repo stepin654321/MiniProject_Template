@@ -5,8 +5,8 @@
 */
 
 
-#ifndef __SETTINGS_H__
-#define __SETTINGS_H__
+#ifndef __TEST_SETTINGS_H__
+#define __TEST_SETTINGS_H__
 
 #define LEFT 75
 #define RIGHT 77
@@ -20,6 +20,6 @@
 
 //Starting point of gameboard
 #define GBOARD_ORIGIN_X 5
-#define GBOARD_ORIGIN_Y 3
+#define GBOARD_ORIGIN_Y 7
 
 #endif
