@@ -18,6 +18,7 @@ extern int score_speed;
 extern int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
 //char blockModel[][4][4];
 
+
 extern COORD curPos;
 extern COORD start;
 
@@ -51,34 +52,34 @@ void RemoveCursor(void)
 void ShowBlock(char blockInfo[4][4])
 {
     int x, y;
-    COORD curPos = GetCurrentCursorPos();
+    COORD curPosNow = GetCurrentCursorPos();
     for (y = 0; y < 4; y++)
     {
         for (x = 0; x < 4; x++)
         {
-            SetCurrentCursorPos(curPos.X + (x * 2), curPos.Y + y);
+            SetCurrentCursorPos(curPosNow.X + (x * 2), curPosNow.Y + y);
             if (blockInfo[y][x] == 1)
                 printf("#");
         }
     }
-    SetCurrentCursorPos(curPos.X, curPos.Y);
+    SetCurrentCursorPos(curPosNow.X, curPosNow.Y);
 }
 //���� ���
 
 void DeleteBlock(char blockInfo[4][4])
 {
     int x, y;
-    COORD curPos = GetCurrentCursorPos();
+    COORD curPosNow = GetCurrentCursorPos();
     for (y = 0; y < 4; y++)
     {
         for (x = 0; x < 4; x++)
         {
-            SetCurrentCursorPos(curPos.X + (x * 2), curPos.Y + y);
+            SetCurrentCursorPos(curPosNow.X + (x * 2), curPosNow.Y + y);
             if (blockInfo[y][x] == 1)
                 printf(" ");
         }
     }
-    SetCurrentCursorPos(curPos.X, curPos.Y);
+    SetCurrentCursorPos(curPosNow.X, curPosNow.Y);
 }
 //���� ����
 
