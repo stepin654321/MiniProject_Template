@@ -16,9 +16,10 @@ extern int block_id_next;
 extern int speed;
 extern int score_speed;
 extern int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
-//extern char blockModel[][4][4];
+//char blockModel[][4][4];
 
 extern COORD curPos;
+extern COORD start;
 
 void SetCurrentCursorPos(int x, int y)
 {
@@ -345,7 +346,7 @@ void ScoreBoard()
     printf("Speed :");
     printf("%d", score_speed);
 }
-//������ Ʋ(����, ����, ���ǵ� ���)
+//������ Ʋ(����, ����, ���ǵ� ���)show
 
 void lineup()
 {

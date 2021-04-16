@@ -31,11 +31,13 @@ int score_speed = 10;
 int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
 
 COORD curPos = {GBOARD_ORIGIN_X + GBOARD_WIDTH, GBOARD_ORIGIN_Y / 2};
+COORD start;
 
 extern char blockModel[][4][4];
 
 int main()
 {
+	start = GetCurrentCursorPos();
 	{
 		int line_cnt = 0;
 		RemoveCursor();
@@ -86,6 +88,7 @@ int main()
 
 	}
 	{
+		//SetCurrentCursorPos(start.X, start.Y);
 		SetCurrentCursorPos(GBOARD_ORIGIN_X + GBOARD_WIDTH, 0);
 		printf("Game Over!!");
 	}
