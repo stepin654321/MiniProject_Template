@@ -1,8 +1,11 @@
 # TetrisNoHoldinPureC
 
+https://github.com/technocrat13/MiniProject_Template/actions/workflows/main.yml/badge.svg
+
+
 * tetris base coded in C, with functional speed up and scoring algorithim
 * code borrowed from kimkyeongnam
-* 
+
 * https://github.com/kimkyeongnam/Tetris
 
 * Ayush Bishnoi has control over this repo now
