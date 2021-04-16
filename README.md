@@ -1,6 +1,6 @@
 # TetrisNoHoldinPureC
 
-https://github.com/technocrat13/MiniProject_Template/actions/workflows/main.yml/badge.svg
+![example workflow](https://github.com/technocrat13/MiniProject_Template/actions/workflows/main.yml/badge.svg)
 
 
 * tetris base coded in C, with functional speed up and scoring algorithim
