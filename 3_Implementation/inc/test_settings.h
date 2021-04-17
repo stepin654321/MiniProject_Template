@@ -16,10 +16,10 @@
 
 //Size of gameboard
 #define GBOARD_WIDTH 10
-#define GBOARD_HEIGHT 20
+#define GBOARD_HEIGHT 21
 
 //Starting point of gameboard
 #define GBOARD_ORIGIN_X 5
-#define GBOARD_ORIGIN_Y 7
+#define GBOARD_ORIGIN_Y 5
 
 #endif

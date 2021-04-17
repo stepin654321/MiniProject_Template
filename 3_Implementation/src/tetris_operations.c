@@ -5,7 +5,7 @@
 #include <time.h>
 #include "block.h"
 #include "gameboard_operations.h"
-#include "settings.h"
+#include "test_settings.h"
 #include <conio.h>
 
 extern int level;
@@ -15,12 +15,13 @@ extern int block_id;
 extern int block_id_next;
 extern int speed;
 extern int score_speed;
-extern int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
-//char blockModel[][4][4];
+extern int gameBoardInfo[GBOARD_HEIGHT + 2][GBOARD_WIDTH + 2];
+extern char blockModel[][4][4];
 
-
-extern COORD curPos;
+extern COORD curPos;  // = {GBOARD_ORIGIN_X + (GBOARD_WIDTH / 2), GBOARD_ORIGIN_Y};
 extern COORD start;
+
+
 
 void SetCurrentCursorPos(int x, int y)
 {
@@ -79,10 +80,12 @@ void DeleteBlock(char blockInfo[4][4])
 {
     int x, y;
     COORD curPosNow = GetCurrentCursorPos();
+    //printf("$");
     for (y = 0; y < 4; y++)
     {
         for (x = 0; x < 4; x++)
         {
+            //SetCurrentCursorPos((x * 2) + GBOARD_ORIGIN_X + (GBOARD_WIDTH / 2), GBOARD_ORIGIN_Y + y);
             SetCurrentCursorPos(curPosNow.X + (x * 2), curPosNow.Y + y);
             if (blockInfo[y][x] == 1)
                 printf(" ");
@@ -95,14 +98,14 @@ void DeleteBlock(char blockInfo[4][4])
 int DetectCollision(int posX, int posY, char blockModelNow[4][4])
 {
     int x, y;
-    int arrX = (posX - GBOARD_ORIGIN_X) / 2;
-    int arrY = posY - GBOARD_ORIGIN_Y;
+    int arrX = posX - (GBOARD_ORIGIN_X - GBOARD_WIDTH) / 2;
+    int arrY = posY - GBOARD_ORIGIN_Y + 1;
 
     for (y = 0; y < 4; y++)
         for (x = 0; x < 4; x++)
             if (blockModelNow[y][x] == 1 && gameBoardInfo[arrY + y][arrX + x] == 1)
                 return 0;
-    return 1;
+    return 1; 
 }
 //���ϰ� �� �浹üũ
 
@@ -139,11 +142,13 @@ void ShiftUp()
 
 int BlockDown()
 {
-    if (DetectCollision(curPos.X, curPos.Y + 1, blockModel[block_id]) == 0)
+    COORD curPosNow = GetCurrentCursorPos();
+    if (DetectCollision(curPosNow.X, curPosNow.Y + 1, blockModel[block_id]) == 0)
         return 0;
+    //int diagnostic1 = getch();
     DeleteBlock(blockModel[block_id]);
-    curPos.Y++;
-    SetCurrentCursorPos(curPos.X, curPos.Y);
+    curPosNow.Y++; 
+    SetCurrentCursorPos(curPosNow.X, curPosNow.Y);
     ShowBlock(blockModel[block_id]);
     return 1;
 }
@@ -267,8 +272,8 @@ void AddBlockToBoard(int shape)
 				gameBoardInfo[arrCurY + y][arrCurX + x] = 0;
 			}*/
             //Convert X,Y cordinate to array index
-            arrCurX = (curPos.X - GBOARD_ORIGIN_X) / 2;
-            arrCurY = curPos.Y - GBOARD_ORIGIN_Y;
+            arrCurX = GBOARD_WIDTH / 2;
+            arrCurY = 0;
 
             if (blockModel[block_id][y][x] == 1)
                 gameBoardInfo[arrCurY + y][arrCurX + x] = 1;
@@ -281,11 +286,12 @@ void RedrawBlocks()
 {
     int x, y;
     int cursX, cursY;
+    COORD curPosNow = GetCurrentCursorPos();
     for (y = 0; y < GBOARD_HEIGHT; y++)
     {
         for (x = 1; x < GBOARD_WIDTH + 1; x++)
         {
-            cursX = x * 2 + GBOARD_ORIGIN_X;
+            cursX = 2 * x + GBOARD_ORIGIN_X;
             cursY = y + GBOARD_ORIGIN_Y;
             SetCurrentCursorPos(cursX, cursY);
             if (gameBoardInfo[y][x] == 1)
@@ -294,6 +300,7 @@ void RedrawBlocks()
                 printf(" ");
         }
     }
+    SetCurrentCursorPos(curPosNow.X, curPosNow.Y);
 }
 //������ ��������
 
@@ -432,7 +439,7 @@ int IsGameOver()
 
 void Show_next_block(int shape)
 {
-    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 4 - start.Y);
+    SetCurrentCursorPos(GBOARD_ORIGIN_X + 25, GBOARD_ORIGIN_Y + 4);
     ShowBlock(blockModel[shape]);
 }
 //���� ���� �����ֱ�

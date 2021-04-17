@@ -30,7 +30,7 @@ int speed = 15;
 int score_speed = 10;
 int gameBoardInfo[GBOARD_HEIGHT + 1][GBOARD_WIDTH + 2];
 
-COORD curPos = {GBOARD_ORIGIN_X + GBOARD_WIDTH, GBOARD_ORIGIN_Y / 2};
+COORD curPos = {GBOARD_ORIGIN_X + 10, GBOARD_ORIGIN_Y};
 COORD start;
 
 extern char blockModel[][4][4];
@@ -95,4 +95,4 @@ int main()
 	}
 
 	return 0;
-}
+} 
