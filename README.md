@@ -16,3 +16,5 @@
 * Static code analysis using cppcheck
 * Dynamic Code analysis using Valgrind
 
+## Learning Resources
+* [How to write Makefile](https://github.com/riuandg5/learn-makefile) by Rishu Anand
