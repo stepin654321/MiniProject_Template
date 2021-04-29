@@ -27,3 +27,6 @@ A Box is associated with following attributes:
 * Follow Modular programming and multifile approach
 * Create Makefile with targets for compiling and testing, analysis and coverage.
 * Follow best practices while writing the code.
+
+## Solutions
+* By [Arnob Chowdhury](https://github.com/arc-arnob/LnT-Assignments/tree/master/Colored_box)
