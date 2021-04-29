@@ -9,6 +9,8 @@
 #include <stdio.h>
 
 int sum(int, int);
+int (*ptr_sum)(int, int);
+
 int prod(int, int);
 
 int main() {
@@ -16,7 +18,7 @@ int main() {
   int a = 10, b = 20, c, d;
   int *ptr_a = &a;
 
-  int (*fp)(int, int);
+  int (*fp)(int, int) = NULL;
 
   fp = sum; // same as *fp = &sum
   sum(a, b);

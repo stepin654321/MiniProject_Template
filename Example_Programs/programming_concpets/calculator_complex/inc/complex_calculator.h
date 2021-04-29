@@ -30,7 +30,7 @@ typedef struct complex_t {
 
 
 /**
-* @brief computes sum of teh two complex numbers
+* @brief computes sum of the two complex numbers
  * 
  * @param[in] cnum1 Pointer to complex number1
  * @param[in] cnum2 Pointer to complex number2 

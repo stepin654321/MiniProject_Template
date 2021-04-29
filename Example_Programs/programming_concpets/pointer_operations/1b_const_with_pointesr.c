@@ -7,11 +7,14 @@
 * violation of const commitment
 */
 #include<stdio.h>
-
+const int global_var = 10; // data (read only)
 int main() {
   
   // Pointer to a constant integer
-  const int a1 = 10;
+  const int a1 = 10;  // stack
+
+  int* pa1 = &a;
+
   const int* ptr1 = &a1;  
   *ptr1 = 5; // wrong
   ptr1++;    // right 
