@@ -63,5 +63,7 @@ typedef struct info_t {
 * By [Gobikumaar-Sivagnanam 255919](https://github.com/Gobikumaar-Sivagnanam/Learnings-Week-3)
 * By [Roopesh Verma](https://github.com/Roopesh16/2a-2b.git)
 * By [258274](https://github.com/Ankana9910/Begin.git)
+* By [Khubi Thakkar - Ques 2a](https://github.com/KhubiThakkar/practise-more/tree/master/Ques2a)
+* By [Khubi Thakkar - Ques 2b](https://github.com/KhubiThakkar/practise-more/tree/master/Ques2b)
 * By [Jeevak Raj](https://github.com/JeevakRaj/LTTS_Stepin_Exercises/tree/main/Question_2a_array_of_structures)
 * By [258070](https://github.com/PramodhMahadeshKM/Question_2a)
